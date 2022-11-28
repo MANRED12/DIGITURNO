@@ -1,18 +1,16 @@
 //Se impora express
 import express from "express";
 import UserRouter from "./routes/UserRouter.js";
+import homeRouter from "./routes/home.js"
 
 //Instancia de la clase express
 const app = express();
 const puerto = 3000;
 
+//Escuchamos del servidor a traves del puerto 3000
+
 app.listen(puerto, () => {
     console.log("El servidor se esta ejecutando.")
-})
-
-app.get("/home", (req, res) => {
-    //Implementamos código
-    res.send("Estas en Home!!")
 })
 
 app.get("/", (req, res) => {
@@ -20,9 +18,16 @@ app.get("/", (req, res) => {
     res.send("Bienvenido Ing. Rodrigo!!")
 })
 
-app.get("/home/grupo", (req, res) => {
-    //Implementamos código
-    res.send("Bienvenidos a mi grupo")
+app.get("/direccion",(req, res)=>{
+    res.redirect(("home/grupo"))
+})
+
+app.get("/usuario", (req, res) => {
+    res.json(usuario)    
+})
+
+app.get("/usuario/mascota", (req, res) => {
+    res.json(usuario.mascota)
 })
 
 const usuario = {
@@ -41,12 +46,7 @@ const usuario = {
         peso: "32 kg"
     }
 }
-app.get("/usuario", (req, res) => {
-    res.json(usuario)    
-})
 
-app.get("/usuario/mascota", (req, res) => {
-    res.json(usuario.mascota)
-})
-
+app.use(express.json())
 app.use("/usuario", UserRouter)
+app.use("/home",homeRouter)
