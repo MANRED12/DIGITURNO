@@ -1,4 +1,5 @@
 import express from "express"
+import { crearPublicacion, leerPublicacion, leerPublicaciones } from "../controllers/homeController.js"
 
 //Variable
 let router = express.Router()
@@ -17,26 +18,20 @@ router.get("/grupo", (req, res) => {
     res.send("Bienvenidos a mi <b>grupo</b>")
 })
 
-//Creacion de arreglo de publicaciones
-let publicaciones = []
+//CRUD CREATE - READ - UPDATE - DELETE
 
 router.post("/nuevo", (req, res) => {
-    let id = Math.random().toString(36).slice(2)
-
-    let publicacion = {
-
-        "Nueva publicacion": req.body.publicacion,
-        identificador: id
-    }
-
-    res.json(publicacion)
-
-    publicaciones.push(publicacion)
+    crearPublicacion(req, res);
 })
 
 router.get("/lista", (req, res) => {
     //Implementamos código
-    res.json(publicaciones)
+    leerPublicaciones(req, res)
+})
+
+router.get("/lista/:id", (req, res) => {
+    //Implementamos código
+    leerPublicacion(req, res)
 })
 
 
