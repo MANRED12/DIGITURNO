@@ -1,17 +1,17 @@
-export function createUSer(res){
+export function createUser(res){
     //Implementacion
     res.sendStatus(200)
 
 }
-export function readUSer(){
+export function readUser(res){
     //Implementacion
     res.sendStatus(200)
 }
-export function updateUSer(){
+export function updateUser(res){
     //Implementacion
     res.sendStatus(200)
 }
-export function deleteUSer(){
+export function deleteUser(res){
     //Implementacion
     res.sendStatus(200)
 }
