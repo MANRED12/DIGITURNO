@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 //Declaramos el modelo
 const userModel = mongoose.Schema({
-    "name": String,
-    "age": Number,
-    "city": String
+    "name": {type:String, required:true},
+    "age": {type:Number, required:true},
+    "city": {type:String, required:true}
 })
 
 export default mongoose.model("users", userModel)

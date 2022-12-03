@@ -1,6 +1,7 @@
 import express from "express"
 import mongoose from "mongoose";
 import userRouter from "./routes/userRouter.js";
+import testRouter from "./routes/testRouter.js";
 
 const app = express();
 
@@ -10,10 +11,10 @@ app.listen(port, () => {
     console.log("El servidor se esta ejecutando correctamente.");
 })
 //Conexion a BD
-mongoose.connect("mongodb+srv://adminProject:Manred0215@clusteraccesscontrolman.tebezur.mongodb.net/AccessControl-Manager?retryWrites=true&w=majority", (err)=>{
-    if(err){
+mongoose.connect("mongodb+srv://adminProject:Manred0215@clusteraccesscontrolman.tebezur.mongodb.net/AccessControl-Manager?retryWrites=true&w=majority", (err) => {
+    if (err) {
         console.log(err);
-    }else{
+    } else {
         console.log("La base de datos se encuentra conectada.");
     }
 })
@@ -21,3 +22,4 @@ mongoose.connect("mongodb+srv://adminProject:Manred0215@clusteraccesscontrolman.
 //Middleware
 app.use(express.json())
 app.use("/user", userRouter)
+app.use("/test", testRouter) 
