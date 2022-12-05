@@ -46,7 +46,7 @@ export async function updateUser(req, res) {
     let document = null
 
     try {
-        document = await userModel.updateOne({ "_id": id }, updates)
+        document = await userModel.updateOne({ "_id": id }, updates, {runValidators:true})
     } catch (error) {
         res.status(400)
         readUser.json(error.message)
