@@ -1,21 +1,85 @@
 .button {
-    padding: 0.5rem;
-    border: none;
-    background-color: aqua;
-    color: black;
-    border-radius: 0.5rem;
+  border: 2px solid #d2bdff;
+  height: 80px;
+  width: 200px;
+  border-radius: 20px;  
+  position: relative;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  margin: 25px;
+  display: flex;
+  background: #1D183A;
 }
 
+.button::after {
+  content: "INICIAR SESION";
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: bold;
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%);
+  color: #d2bdff;
+  transition: all 0.1s linear;
+}
 
-.button:hover {
-    cursor: pointer;
-    background-color: rgb(173, 17, 48);
+.button::before {
+  content: "";
+  position: relative;
+  display: block;
+  height: 15px;
+  width: 15px;
+  background: #d2bdff;
+  box-shadow: 0px 0px 10px 3px #00a3ff;
+  margin-left: -8px;
+  margin-top: -8px;
+  opacity: 0;
+  transition: all 0.1s linear;
+  border-radius: 100%;
+  animation: star 1.3s linear infinite;
 }
 
 .input {
-    text-align: start;
-    padding: 0.2rem;
-    border: none;
-    background: none;
-    border-bottom: solid 1px;
+  text-align: start;
+  padding: 0.2rem;
+  border: none;
+  background: none;
+  border-bottom: solid 1px;
+}
+
+@keyframes star {
+  0% {
+    margin-left: -8px;
+    margin-top: -8px;
+  }
+  25% {
+    margin-left: 194px;
+    margin-top: -8px;
+  }
+
+  50% {
+    margin-left: 194px;
+    margin-top: 75px;
+  }
+  75% {
+    margin-left: -8px;
+    margin-top: 75px;
+  }
+  100% {
+    margin-left: -8px;
+    margin-top: -8px;
+  }
+}
+
+.button:hover::before {
+  opacity: 1;
+  animation: star 1.3s linear infinite;
+}
+.button:hover::after {
+  content: "INICIAR SESION"; font-weight: bold; color: darkblue;
+  text-shadow: 0 0 10px white, 0 0 10px white, 0 0 20px #00a3ff, 0 0 30px #00a3ff,
+    0 0 40px #00a3ff, 0 0 50px #00a3ff, 0 0 60px #00a3ff;
 }
