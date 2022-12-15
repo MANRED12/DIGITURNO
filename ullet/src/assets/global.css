@@ -8,6 +8,8 @@
     outline: none;
 }
 
-body {
-    background-color: black;
+.flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
