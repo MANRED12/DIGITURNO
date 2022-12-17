@@ -1,16 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import ListaUsuarios from './ListaUsuarios';
-import AgregarUsuario from './AgregarUsuario';
-import EditarUsuario from './EditarUsuario';
+import logo from "./logo.svg";
+import "./App.css";
+import ListaUsuarios from "./ListaUsuarios";
+import AgregarUsuario from "./AgregarUsuario";
+import EditarUsuario from "./EditarUsuario";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1 style={{color: 'blue'}} >CrudMergeStack - MANRED</h1>
-      <ListaUsuarios/>
-      <AgregarUsuario/>
-      <EditarUsuario/>
+      <h1 style={{ color: "blue" }}>CrudMergeStack - MANRED</h1>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ListaUsuarios/>} exact></Route>
+          <Route path="/agregarusuario" element={<AgregarUsuario />} exact></Route>
+          <Route path="/editarusuario" element={<EditarUsuario />} exact></Route>
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
