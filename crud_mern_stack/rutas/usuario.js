@@ -19,3 +19,7 @@ module.exports = router
 router.get('/ejemplo', (req, res)=>{
     res.end('Carga exitosa desde ruta ejemplo')
 })
+
+router.get('/test', (req, res)=>{
+    res.end('Carga exitosa desde ruta test')
+})
