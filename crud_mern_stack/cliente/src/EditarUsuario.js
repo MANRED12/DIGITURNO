@@ -3,8 +3,9 @@ import React from 'react'
 function EditarUsuario(){
     return(
         <div>
-            <h2 style={{color: 'pink'}}>EDITAR UN USUARIO EXISTENTE</h2>
+            <h2 style={{color:'pink'}}>Editar un usuario existente</h2>
         </div>
+
     )
 }
 

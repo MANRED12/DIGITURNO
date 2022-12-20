@@ -4,7 +4,7 @@ import UsuarioIndividual from './UsuarioIndividual'
 function ListaUsuarios(){
     return(
         <div>
-            <h2 style={{color: 'red'}}>LISTA DE USUARIOS</h2>
+            <h2>Listado de Usuarios</h2>
             <UsuarioIndividual/>
         </div>
     )

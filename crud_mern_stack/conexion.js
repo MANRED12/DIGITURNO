@@ -5,7 +5,7 @@ mongoose.connect('mongodb+srv://MANRED12:Gaby0215@clustercrudmernstack.ev54d82.m
 const objetobd = mongoose.connection
 
 objetobd.on('connected', ()=>{
-console.log("Conexión correcta  a MongoDB")
+console.log("Conexión correcta a MongoDB (conexión.js)")
 })
 
 objetobd.on('error', ()=>{

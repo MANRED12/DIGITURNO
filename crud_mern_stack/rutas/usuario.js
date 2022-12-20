@@ -12,10 +12,10 @@ const eschemausuario = new eschema({
 })
 
 const ModeloUsuario = mongoose.model('usuarios', eschemausuario)
+
 module.exports = router
 
-//Ruta de prueba
-
-router.get('/ejemplo', (req, res) => {
-    res.end('Carga desde ruta ejemplo')
+//En localhost:5000/api/usuario/ejemplo
+router.get('/ejemplo', (req, res)=>{
+    res.end('Carga exitosa desde ruta ejemplo')
 })
