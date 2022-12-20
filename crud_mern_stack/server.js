@@ -15,7 +15,6 @@ app.get('/', (req, res)=>{
     res.end('Este es el servidor BackEnd en el puerto '+port)
 })
 //Importar conexion MongoDB
-//const archivoBD = require('./conexion')
 
 //Configurar server básico
 app.listen(port, () =>{
